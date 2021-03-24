@@ -2,9 +2,8 @@
 
 https://replit.com/@Kunl19/testships#main.cpp
 
-## Read me file
-
-Overall summary - Summary and review of the problem, overall proposed solution.
+## Overall summary 
+Summary and review of the problem, overall proposed solution.
 The task proposed in the document below is a clone of the of the classic game Battleships. This variation is called AdaShips which is a two-player game that can be played against a person or a computer. The aim of the game is to destroy all of the opponents placed ships before the ships you have placed on your board are destroyed. The game is won when one player has sunk all the other players ships. My initial proposal to the solution is to allow the player to setup his own board by placing multiple ships of different sizes. I would also need to generate a board which can be dynamically sized within a file containing the rules. The player would then need to fire a ‘torpedo’  at a specific coordinate which will be classified as a ‘hit’ or ‘miss’ depending on whether the ‘torpedo’ hits the opponent’s ships. A winner will then be decided when all of one player’s ships have been sunk by the other player. To destroy a ship the player would have to enter all the coordinates of a specific ship. The player would then need to be indicated of this on the console.
 
 <img width="503" alt="UML" src="https://user-images.githubusercontent.com/56549091/112318195-aecb0d00-8ca4-11eb-92c5-fd3465fcb7fa.png">
