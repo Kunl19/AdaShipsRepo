@@ -41,44 +41,50 @@ Once I had a list of main epics and stories I broke these down into a list of ta
 
 ## Task/Code Review and code changes 
 An important design pattern used within the project is the Singleton pattern. This will ensure that there is only one instance of the class. This is important when loading the game board information from the ada_configs.ini file.
- 
+
+<img width="224" alt="code2" src="https://user-images.githubusercontent.com/56549091/112319026-8f80af80-8ca5-11eb-90e8-fff7c61c05fa.png">
 
 This an example function where the code reads the .ini file and uses a function I created within the file to split the text in the file. Once the text is split by a specific delimiter; in this case it is an equal sign
 The ada_configs.ini file contains the game configurations. I then created methods to extract the height and width values of the board and the name and size of each ship from the config file. These values are then saved into structs. Using structs were useful as they allowed me to group specific information in collections and assign data to a specific struct. In this case information about the patrol boat is passed into the Patrol struct in two parts. 
 
+<img width="78" alt="code3" src="https://user-images.githubusercontent.com/56549091/112319120-a7f0ca00-8ca5-11eb-867b-b7c5d06a951e.png">
+
+<img width="160" alt="code4" src="https://user-images.githubusercontent.com/56549091/112319205-be972100-8ca5-11eb-99b7-22a155abc892.png">
 
 
 ## OOP
 When creating most of the main functions for the game I added a new Board.cpp file. The writing of these functions outside of the main file allowed me to break down the code into smaller objects rather than one long line of code in the main function. Using classes and objects allowed me to utilise the OOP features. Using a constructor in the board.cpp when creating the functions for the board creation allows the constructor to always be called when I created the object for the class.
 
- 
+<img width="204" alt="code5" src="https://user-images.githubusercontent.com/56549091/112319352-e090a380-8ca5-11eb-8ade-fa7768ef5578.png">
 
 This allowed me to create different objects depending on the player playing the game. When two players play against each other the program will create  two objects. One for each player.
- 
 
+<img width="271" alt="code6" src="https://user-images.githubusercontent.com/56549091/112320030-89d79980-8ca6-11eb-826c-b1b96d686b6f.png">
+ 
 Above I created an object called player1_grid. This then allows me to access the drawgrid() method and within the for loop the placeShip() method. Both these methods are within the Board class. The first method (drawgrid(1)) in the code above draws the battleship grid and displays certain icons on the coordinates depending on their values. An example of this is when a coordinate is hit or missed. The parameter within the drawgrid method is either 1 or 0 depending on whether the parameter within the class showShips is equal to 1.
 
+ When showShips(param) param == 1 this displays the values of the ships you have placed on the board. When it is your turn to guess the coordinates of your opponent’s ships the parameter within show ships becomes zero. This then hides your opponent’s ships hence not giving away the coordinate values.
+ 
+ <img width="353" alt="code7" src="https://user-images.githubusercontent.com/56549091/112320226-bc819200-8ca6-11eb-835c-7ee593b3a292.png">
  
 ## Embedded Innovations
-When showShips(param) param == 1 this displays the values of the ships you have placed on the board. When it is your turn to guess the coordinates of your opponent’s ships the parameter within show ships becomes zero. This then hides your opponent’s ships hence not giving away the coordinate values.
 
- 
-
+<img width="355" alt="code8" src="https://user-images.githubusercontent.com/56549091/112320327-d622d980-8ca6-11eb-981e-547ed098dfd0.png">
 
 The code above is within the placeShip method inside the Board.cpp file. It is a key component in allowing a player or computer to place ships on the board. It is within the function below which takes four parameters that control the ships placement. Char y and char x control the coordinates of chosen to place the first point of the boat. The value from int length is passed depending on which ship is placed. If the ship length of the carrier is given as a parameter which has a length of 5 points, the size of the ship placed would be 5. One of the most innovative parts of the code is within the for loop in the image above. Depending on the length and heading which is the direction the ship coordinates would be placed from the original coordinate input. 
 
- 
+<img width="147" alt="Board" src="https://user-images.githubusercontent.com/56549091/112320461-f05cb780-8ca6-11eb-8301-85770dccb687.png">
 
 Using the example board above to explain this idea. If I wanted to place a ship at point A0 where the red X is located. The value of the heading value would be ‘W’ as a ship that is length 4 is four coordinates to the west of the points A0. Therefore, in the program when placing a ship, you format would be as such – A04.
 Originally I was only able to place a single coordinate on to a board per users turn. The placeShip method has made it quicker and easier for a player to enter coordinates on the board.
 
 ## Quality when making changes and bugs 
 Another issue I was able to resolve was creating a method that decided the outcome of a game once it had been completed. The code created for hand meant the user had to manually quit the game and a winner was not awarded. 
-Using an object orientated approach allowed me to create an object and assign it to an integer value returned from a method within the Board class. The method which is called isLoser() returns the integer value 1.
+Using an object orientated approach allowed me to create an object and assign it to an integer value returned from a method within the Board class. The method which is called isGameover() returns the integer value 1.
 The nested loop within the function checks through all the coordinates in the grid looking for the + symbol. This symbol in the grid represents the coordinates of a ships on the board. If there are no more ships left the if statement is exited and a value of 1 is returned. 
  
 
-Using the object below to access the isLoser() method, if it is equal to the integer value of 1 the loop breaks and the game ends.
+Using the object below to access the isGameover() method, if it is equal to the integer value of 1 the loop breaks and the game ends.
 
  
 
