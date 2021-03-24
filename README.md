@@ -51,7 +51,7 @@ The ada_configs.ini file contains the game configurations. I then created method
 <img width="160" alt="code4" src="https://user-images.githubusercontent.com/56549091/112319205-be972100-8ca5-11eb-99b7-22a155abc892.png">
 
 
-## OOP
+## Object Orientated Programming
 When creating most of the main functions for the game I added a new Board.cpp file. The writing of these functions outside of the main file allowed me to break down the code into smaller objects rather than one long line of code in the main function. Using classes and objects allowed me to utilise the OOP features. Using a constructor in the board.cpp when creating the functions for the board creation allows the constructor to always be called when I created the object for the class.
 
 <img width="204" alt="code5" src="https://user-images.githubusercontent.com/56549091/112319352-e090a380-8ca5-11eb-8ade-fa7768ef5578.png">
