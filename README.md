@@ -83,40 +83,26 @@ Another issue I was able to resolve was creating a method that decided the outco
 Using an object orientated approach allowed me to create an object and assign it to an integer value returned from a method within the Board class. The method which is called isGameover() returns the integer value 1.
 The nested loop within the function checks through all the coordinates in the grid looking for the + symbol. This symbol in the grid represents the coordinates of a ships on the board. If there are no more ships left the if statement is exited and a value of 1 is returned. 
  
+<img width="248" alt="GM9" src="https://user-images.githubusercontent.com/56549091/112321456-ed15fb80-8ca7-11eb-966c-d63ae64aab77.png">
 
 Using the object below to access the isGameover() method, if it is equal to the integer value of 1 the loop breaks and the game ends.
 
- 
+<img width="280" alt="GM10" src="https://user-images.githubusercontent.com/56549091/112321537-0323bc00-8ca8-11eb-8b17-4803f09c5356.png">
 
 ## Code Modularisation 
 Another programming technique I had to take into account when creating this project was code modularisation which is the idea of separating code functionality into different class depending on the use of the code.
 This is technique was displayed when creating the class containing the functionality relevant to the creation and use of the board at the start and during the game. This separation is important is it is easier to identify problems that need fixing in a specific area of the code. It also makes the code more testable and easier to read when incorporated with header folders. 
 
-
-
-
-
-
-
-
-
-
-
-
-## Code Reuse // Random ship method – talk about finding random ship values 
+## Code Reuse // Random ship method  
 I was able to reuse functions within the Board class, so the computer AI was able guess position of ships on the players board. The function getRandomGuess() displayed below allows the computer to generate a random coordinate on the board. It selects a random integer value between 0 and 9 then stores the value into char x.  A random letter is then stored within char y. I then concatenated the values into the string guess with is return. 
 
- 
+<img width="338" alt="code11" src="https://user-images.githubusercontent.com/56549091/112321888-572ea080-8ca8-11eb-9b1f-68c81a028658.png">
 
 The code below show how the return string is used within the player guess method. The random string created is indexed and passed into playerGuess() function as a parameter. This functionality allows the computer AI to place random coordinates on the players grid.
 
- 
+<img width="213" alt="code12" src="https://user-images.githubusercontent.com/56549091/112321937-631a6280-8ca8-11eb-9a06-81b335788e5b.png">
 
 This same method is reused in the code to allow the computer AI to place its ships on the board. In this case I created a function called getRandomShipPlacement() which passes randomly generated values into the parameters of the placeShip() function.
-
-
-
-
 
 ## Reflective Reviews 
 During the course of the project I was able to work using an agile methodology, writing part of the code in iterations and improving on it with new information and ideas. I was able to implement the ADA Ships game where 2 human players are able to play against each other making use of functions that allow users to place, guess and target ships on a board. 
