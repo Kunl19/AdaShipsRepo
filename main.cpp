@@ -437,7 +437,8 @@ int main() {
             Board player2_grid;
             player2_grid.drawGrid(1);
             for (int i = 0; i < 5; i++) {
-                place = getRandomShipPlacement();
+                place = getShipPlacement(shipLengthArray[i], shipNamesArray[i]);
+                //Entered wrong method on original commit 
                 player2_grid.placeShip(place[0], place[1], place[2], shipLengthArray[i]);
             }
 
